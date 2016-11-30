@@ -17,22 +17,44 @@ and open the template in the editor.
             <br>
             <table style="width: 20%">
                 <tr>
-                    <td><button onclick="incorrect()">Racoon</button></td>
-                    <td><button onclick="incorrect()">Gorilla</button></td>
+                    <td><button id='incorrect' onclick="incorrect()">Racoon</button></td>
+                    <td><button id='incorrect' onclick="incorrect()">Gorilla</button></td>
                 </tr>
                 <tr>
-                    <td><button id="correct" onclick="correct()">Bald Eagle</button></td>
-                    <td><button onclick="incorrect()">Bear</button></td>
+                    <td><button id='correct' onclick="correct()">Bald Eagle</button></td>
+                    <td><button id='incorrect' onclick="incorrect()">Bear</button></td>
                 </tr>
             </table>
-            <p id="demo"></p>
+            <p id="answer"></p>
+            <div id="result"></div>
+            <div id="result2"></div>
+            <button onclick="clear()">Clear Results</button>
         </div>
         <script>
             function incorrect() {
-                document.getElementById("demo").innerHTML = 'Incorrect Answer';
+                if (typeof (Storage) !== "undefined") {
+                    if (localStorage.clickcount) {
+                        localStorage.clickcount = Number(localStorage.clickcount) + 1;
+                    } else {
+                        localStorage.clickcount = 1;
+                    }
+                    document.getElementById("result").innerHTML = "You have clicked the incorrect answer " + localStorage.clickcount + " time(s).";
+                }
+                document.getElementById("answer").innerHTML = 'Incorrect Answer, Try Again!';
             }
             function correct() {
-                document.getElementById("demo").innerHTML = 'Correct!';
+                if (typeof (Storage) !== "undefined") {
+                    if (localStorage.clickcount2) {
+                        localStorage.clickcount2 = Number(localStorage.clickcount2) + 1;
+                    } else {
+                        localStorage.clickcount2 = 1;
+                    }
+                    document.getElementById("result2").innerHTML = "You have clicked the correct answer " + localStorage.clickcount2 + " time(s).";
+                }
+                document.getElementById("answer").innerHTML = 'Correct!';
+            }
+            function clear() {
+                    localStorage.clear();
             }
         </script>
     </body>
