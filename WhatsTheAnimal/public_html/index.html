@@ -9,14 +9,15 @@ and open the template in the editor.
         <title>What's that Animal?</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <link type="text/css" rel="stylesheet" href="style.css">
+        <link type="text/css" rel="stylesheet" href="style.css">
     </head>
     <body style="background-color: #63CAD1">
         <div>
             <h1>What's that Animal?</h1>
-            <img src="images/BaldEagle.jpg" alt="Bald Eagle" style="width:304px;height:228px;">
+            <p id="images"></p>
             <br>
-            <table style="width: 20%">
+            <p id="answers"></p>
+<!--            <table style="width: 20%">
                 <tr>
                     <td><button id='incorrect' onclick="incorrect()">Racoon</button></td>
                     <td><button id='incorrect' onclick="incorrect()">Gorilla</button></td>
@@ -25,20 +26,21 @@ and open the template in the editor.
                     <td><button id='correct' onclick="correct()">Bald Eagle</button></td>
                     <td><button id='incorrect' onclick="incorrect()">Bear</button></td>
                 </tr>
-            </table>
+            </table>-->
             <p id="answer"></p>
             <div id="result"></div>
             <div id="result2"></div>
-            <button onclick="clear()">Clear Results</button>
+            <p><button onclick="clear()">Clear Results</button></p>
+            <p><button onclick="nextQuestion()">Next Question</button></p>
         </div>
         <div id="movement" style="width: 1500px;">
             <div>   <img src="images/sunsun-01.png" id="move3" style="position: absolute; width: 1525px;"  /> </div>
             <div>   <img src="images/skysky-01.png" id="move4"  style="position: absolute; width: 1525px;" />  </div>
             <div>   <img src="images/mountainsmountains-01.png" id="move2"  style="position: absolute; width: 1525px;"  /> </div>
             <div>   <img src="images/forestforest-01.png"   style="position: absolute; width: 1525px;"  /> </div>
-        
+
         </div>
-        <script>
+        <script type="text/javascript">
             function incorrect() {
                 if (typeof (Storage) !== "undefined") {
                     if (localStorage.clickcount) {
@@ -62,8 +64,57 @@ and open the template in the editor.
                 document.getElementById("answer").innerHTML = 'Correct!';
             }
             function clear() {
-                    localStorage.clear();
+                localStorage.clear();
             }
+            var image_1 = {
+                image: '<img src="images/BaldEagle.jpg" alt="Bald Eagle" style="width:304px;height:228px;">',
+                answers: '<table style="width: 20%"><tr><td><button id="incorrect" onclick="incorrect()">Racoon</button></td>\n\
+                         <td><button id="incorrect" onclick="incorrect()">Gorilla</button></td></tr><tr><td>\n\
+                         <button id="correct" onclick="correct()">Bald Eagle</button></td>\n\
+                         <td><button id="incorrect" onclick="incorrect()">Bear</button></td></tr></table>',
+                correct:'Bald Eagle'
+            };
+            var image_2 = {
+                image: '<img src="images/Elephant.jpg" alt="Elephant" style="width:304px;height:228px;">',
+                answers: '<table style="width: 20%"><tr><td><button id="incorrect" onclick="incorrect()">Racoon</button></td>\n\
+                         <td><button id="incorrect" onclick="incorrect()">Gorilla</button></td></tr><tr><td>\n\
+                         <button id="correct" onclick="correct()">Elephant</button></td>\n\
+                         <td><button id="incorrect" onclick="incorrect()">Bear</button></td></tr></table>',
+                correct: 'Elephant'
+            };
+            var image_3 = {
+                image: '<img src="images/Giraffe.jpg" alt="Giraffe" style="width:304px;height:228px;">',
+                answers: '<table style="width: 20%"><tr><td><button id="incorrect" onclick="incorrect()">Racoon</button></td>\n\
+                         <td><button id="incorrect" onclick="incorrect()">Gorilla</button></td></tr><tr><td>\n\
+                         <button id="correct" onclick="correct()">Giraffe</button></td>\n\
+                         <td><button id="incorrect" onclick="incorrect()">Bear</button></td></tr></table>',
+                correct: 'Crocodile'
+            };
+            var image_4 = {
+                image: '<img src="images/Gorilla.jpg" alt="Gorilla" style="width:304px;height:228px;">',
+                answers: '<table style="width: 20%"><tr><td><button id="incorrect" onclick="incorrect()">Racoon</button></td>\n\
+                         <td><button id="incorrect" onclick="incorrect()">Bird</button></td></tr><tr><td>\n\
+                         <button id="correct" onclick="correct()">Gorilla</button></td>\n\
+                         <td><button id="incorrect" onclick="incorrect()">Bear</button></td></tr></table>',
+                correct: 'Gorilla'
+            };
+
+            var images = [];
+            images[0] = image_1;
+            images[1] = image_2;
+            images[2] = image_3;
+            images[3] = image_4;
+
+            function nextQuestion() {
+                var r = Math.floor(Math.random() * (images.length));
+                document.getElementById("images").innerHTML = images[r].image;
+                document.getElementById("answers").innerHTML = images[r].answers;
+//                $('button').unbind();
+//                $('button').click(function () {
+//                    ($('#usr_answer').val() === images[r].correct) ? goodAnswer(r) : badAnswer(r);
+//                });
+            }
+            nextQuestion();
         </script>
     </body>
 </html>
