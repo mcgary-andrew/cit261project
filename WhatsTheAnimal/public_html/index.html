@@ -68,7 +68,7 @@ and open the template in the editor.
             }
             var image_1 = {
                 image: '<img src="images/BaldEagle.jpg" alt="Bald Eagle" style="width:304px;height:228px;">',
-                answers: '<table style="width: 20%"><tr><td><button id="incorrect" onclick="incorrect()">Racoon</button></td>\n\
+                answers: '<table style="width: 20%"><tr><td><button id="incorrect" onclick="incorrect()">Lion</button></td>\n\
                          <td><button id="incorrect" onclick="incorrect()">Gorilla</button></td></tr><tr><td>\n\
                          <button id="correct" onclick="correct()">Bald Eagle</button></td>\n\
                          <td><button id="incorrect" onclick="incorrect()">Bear</button></td></tr></table>',
@@ -76,27 +76,75 @@ and open the template in the editor.
             };
             var image_2 = {
                 image: '<img src="images/Elephant.jpg" alt="Elephant" style="width:304px;height:228px;">',
-                answers: '<table style="width: 20%"><tr><td><button id="incorrect" onclick="incorrect()">Racoon</button></td>\n\
+                answers: '<table style="width: 20%"><tr><td><button id="incorrect" onclick="incorrect()">Raccoon</button></td>\n\
                          <td><button id="incorrect" onclick="incorrect()">Gorilla</button></td></tr><tr><td>\n\
                          <button id="correct" onclick="correct()">Elephant</button></td>\n\
-                         <td><button id="incorrect" onclick="incorrect()">Bear</button></td></tr></table>',
+                         <td><button id="incorrect" onclick="incorrect()">Panda</button></td></tr></table>',
                 correct: 'Elephant'
             };
             var image_3 = {
                 image: '<img src="images/Giraffe.jpg" alt="Giraffe" style="width:304px;height:228px;">',
-                answers: '<table style="width: 20%"><tr><td><button id="incorrect" onclick="incorrect()">Racoon</button></td>\n\
-                         <td><button id="incorrect" onclick="incorrect()">Gorilla</button></td></tr><tr><td>\n\
+                answers: '<table style="width: 20%"><tr><td><button id="incorrect" onclick="incorrect()">Zebra</button></td>\n\
+                         <td><button id="incorrect" onclick="incorrect()">Kangaroo</button></td></tr><tr><td>\n\
                          <button id="correct" onclick="correct()">Giraffe</button></td>\n\
                          <td><button id="incorrect" onclick="incorrect()">Bear</button></td></tr></table>',
                 correct: 'Crocodile'
             };
             var image_4 = {
                 image: '<img src="images/Gorilla.jpg" alt="Gorilla" style="width:304px;height:228px;">',
-                answers: '<table style="width: 20%"><tr><td><button id="incorrect" onclick="incorrect()">Racoon</button></td>\n\
-                         <td><button id="incorrect" onclick="incorrect()">Bird</button></td></tr><tr><td>\n\
+                answers: '<table style="width: 20%"><tr><td><button id="incorrect" onclick="incorrect()">Tiger</button></td>\n\
+                         <td><button id="incorrect" onclick="incorrect()">Shark</button></td></tr><tr><td>\n\
                          <button id="correct" onclick="correct()">Gorilla</button></td>\n\
-                         <td><button id="incorrect" onclick="incorrect()">Bear</button></td></tr></table>',
+                         <td><button id="incorrect" onclick="incorrect()">Elephant</button></td></tr></table>',
                 correct: 'Gorilla'
+            };
+            var image_5 = {
+                image: '<img src="images/Lion.jpg" alt="Lion" style="width:304px;height:228px;">',
+                answers: '<table style="width: 20%"><tr><td><button id="incorrect" onclick="incorrect()">Rino</button></td>\n\
+                         <td><button id="incorrect" onclick="incorrect()">Polar Bear</button></td></tr><tr><td>\n\
+                         <button id="correct" onclick="correct()">Lion</button></td>\n\
+                         <td><button id="incorrect" onclick="incorrect()">Elephant</button></td></tr></table>',
+                correct: 'Lion'
+            };
+            var image_6 = {
+                image: '<img src="images/Panda.jpg" alt="Panda" style="width:304px;height:228px;">',
+                answers: '<table style="width: 20%"><tr><td><button id="incorrect" onclick="incorrect()">Bald Eagle</button></td>\n\
+                         <td><button id="incorrect" onclick="incorrect()">Gorilla</button></td></tr><tr><td>\n\
+                         <button id="correct" onclick="correct()">Panda</button></td>\n\
+                         <td><button id="incorrect" onclick="incorrect()">Shark</button></td></tr></table>',
+                correct: 'Panda'
+            };
+            var image_7 = {
+                image: '<img src="images/PolarBear.jpg" alt="Polar Bear" style="width:304px;height:228px;">',
+                answers: '<table style="width: 20%"><tr><td><button id="incorrect" onclick="incorrect()">Tiger</button></td>\n\
+                         <td><button id="incorrect" onclick="incorrect()">Giraffe</button></td></tr><tr><td>\n\
+                         <button id="correct" onclick="correct()">Polar Bear</button></td>\n\
+                         <td><button id="incorrect" onclick="incorrect()">Lion</button></td></tr></table>',
+                correct: 'Polar Bear'
+            };
+            var image_8 = {
+                image: '<img src="images/Rino.jpg" alt="Rino" style="width:304px;height:228px;">',
+                answers: '<table style="width: 20%"><tr><td><button id="incorrect" onclick="incorrect()">Dog</button></td>\n\
+                         <td><button id="incorrect" onclick="incorrect()">Panda</button></td></tr><tr><td>\n\
+                         <button id="correct" onclick="correct()">Rino</button></td>\n\
+                         <td><button id="incorrect" onclick="incorrect()">Tiger</button></td></tr></table>',
+                correct: 'Rino'
+            };
+            var image_9 = {
+                image: '<img src="images/Shark.jpg" alt="Shark" style="width:304px;height:228px;">',
+                answers: '<table style="width: 20%"><tr><td><button id="incorrect" onclick="incorrect()">Panda</button></td>\n\
+                         <td><button id="incorrect" onclick="incorrect()">Whale</button></td></tr><tr><td>\n\
+                         <button id="correct" onclick="correct()">Shark</button></td>\n\
+                         <td><button id="incorrect" onclick="incorrect()">Elephant</button></td></tr></table>',
+                correct: 'Shark'
+            };
+            var image_10 = {
+                image: '<img src="images/Tiger.jpg" alt="Tiger" style="width:304px;height:228px;">',
+                answers: '<table style="width: 20%"><tr><td><button id="incorrect" onclick="incorrect()">Rino</button></td>\n\
+                         <td><button id="incorrect" onclick="incorrect()">Lion</button></td></tr><tr><td>\n\
+                         <button id="correct" onclick="correct()">Tiger</button></td>\n\
+                         <td><button id="incorrect" onclick="incorrect()">Gorilla</button></td></tr></table>',
+                correct: 'Tiger'
             };
 
             var images = [];
@@ -104,6 +152,12 @@ and open the template in the editor.
             images[1] = image_2;
             images[2] = image_3;
             images[3] = image_4;
+            images[4] = image_5;
+            images[5] = image_6;
+            images[6] = image_7;
+            images[7] = image_8;
+            images[8] = image_9;
+            images[9] = image_10;
 
             function nextQuestion() {
                 var r = Math.floor(Math.random() * (images.length));
