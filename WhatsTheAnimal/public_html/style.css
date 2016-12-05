@@ -36,3 +36,16 @@
 
 @keyframes backandforth {0%{left:0;}  2%{left:0;}}
 
+h1{
+    color: white;
+    font-family:helvetica;
+    text-align: center;
+    font-size: 200%;
+    border: 20px solid transparent;
+    padding: 10px;
+    }
+
+#images{
+    text-align: center;
+    position: relative;
+}

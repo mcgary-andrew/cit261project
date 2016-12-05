@@ -10,12 +10,31 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link type="text/css" rel="stylesheet" href="style.css">
+        <script src='main.js'></script>
     </head>
-    <body style="background-color: #63CAD1">
+    <body style="background-color: #63CAD1" onload='getHighScore()'>
         <div>
             <h1>What's that Animal?</h1>
             <p id="images"></p>
             <br>
+            
+        <form>
+            <p>Enter First Name:</p>
+            <input id='name1' onblur='storePlayerName()'>
+            <p>Enter Last Name:</p>
+            <input id='name2' onblur='storePlayerName()'>
+        </form>
+        
+        <div id='keepingScore'>
+            <p>Current Score</p>
+            <span id='currentScore'>0</span><br>
+        </div>
+            
+        <div id='getHighScore'>
+            <p>Your High Score</p>
+            <span id='high_score'>--</span>
+        </div>
+        
             <p id="answers"></p>
 <!--            <table style="width: 20%">
                 <tr>
@@ -27,12 +46,16 @@ and open the template in the editor.
                     <td><button id='incorrect' onclick="incorrect()">Bear</button></td>
                 </tr>
             </table>-->
+
+
+
             <p id="answer"></p>
             <div id="result"></div>
             <div id="result2"></div>
             <p><button onclick="clear()">Clear Results</button></p>
             <p><button onclick="nextQuestion()">Next Question</button></p>
         </div>
+        
         <div id="movement" style="width: 1500px;">
             <div>   <img src="images/sunsun-01.png" id="move3" style="position: absolute; width: 1525px;"  /> </div>
             <div>   <img src="images/skysky-01.png" id="move4"  style="position: absolute; width: 1525px;" />  </div>
@@ -53,14 +76,10 @@ and open the template in the editor.
                 document.getElementById("answer").innerHTML = 'Incorrect Answer, Try Again!';
             }
             function correct() {
-                if (typeof (Storage) !== "undefined") {
-                    if (localStorage.clickcount2) {
-                        localStorage.clickcount2 = Number(localStorage.clickcount2) + 1;
-                    } else {
-                        localStorage.clickcount2 = 1;
-                    }
-                    document.getElementById("result2").innerHTML = "You have clicked the correct answer " + localStorage.clickcount2 + " time(s).";
-                }
+                currentScore = currentScore + 1;
+                document.getElementById('currentScore').innerHTML = currentScore;
+                localStorage.setItem('Current Score', currentScore);
+                setHighScore();
                 document.getElementById("answer").innerHTML = 'Correct!';
             }
             function clear() {
