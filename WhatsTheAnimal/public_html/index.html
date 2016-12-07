@@ -12,7 +12,7 @@ and open the template in the editor.
         <link type="text/css" rel="stylesheet" href="style.css">
         <script src='main.js'></script>
     </head>
-    <body style="background-color: #63CAD1" onload='getHighScore()'>
+    <body onload="myFunction()" style="background-color: #63CAD1" onload='getHighScore()'>
         
                 <div id="movement" style="width: 1500px;">
             <div>   <img src="images/sunsun-01.png" id="move3" style="position: absolute; width: 1525px;"  /> </div>
@@ -50,7 +50,7 @@ and open the template in the editor.
             <span style="color: white; font-size: 3em;" id='high_score'>--</span>
         </div>
         </div>
-        <div style="position: relative; background-color: rgba(0,0,0,0.6); border-radius: 15px; float: right;">
+        <div style="margin-right: 525px; position: relative; background-color: rgba(0,0,0,0.6); border-radius: 15px; float: right;">
             <h1 style="color: white;">What's that Animal?</h1>
             <p  id="images"></p>
         
@@ -70,7 +70,9 @@ and open the template in the editor.
 
             
         </div>
-        
+        <div id="myDIV"><p style="margin-left: -460px; font-size: 5em;">Welcome!</p><img style="margin-left: -460px; position: absolute; height: 180%;" src="data:image/jpeg;base64,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">
+            </div>
+       
 
         <script type="text/javascript">
             function incorrect() {
@@ -197,6 +199,32 @@ and open the template in the editor.
 //                });
             }
             nextQuestion();
+            var cat = document.getElementById("myDIV");
+
+
+// Start the animation with JavaScript
+function myFunction() {
+    cat.style.WebkitAnimation = "mymove 6s "; // Code for Chrome, Safari and Opera
+    cat.style.animation = "mymove 6s ";       // Standard syntax
+}
+
+
+
+
+// Code for Chrome, Safari and Opera
+cat.addEventListener("webkitAnimationStart", myStartFunction);
+cat.addEventListener("webkitAnimationEnd", myEndFunction);
+
+// Standard syntax
+cat.addEventListener("animationstart", myStartFunction);
+cat.addEventListener("animationend", myEndFunction);
+
+function myStartFunction() {
+}
+function myEndFunction() {
+
+}
+
         </script>
     </body>
 </html>

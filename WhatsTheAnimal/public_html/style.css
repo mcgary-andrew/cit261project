@@ -88,3 +88,25 @@ h1{
   opacity: 1;
   right: 0;
 }
+#myDIV {
+    margin: 25px;
+    width: 100px;
+    height: 150px;
+ 
+    position: absolute;
+    font-size: 20px;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+    from {left: 0px;}
+     to {left: 1495px;}
+    to {left: 1495px;}
+}
+
+@keyframes mymove {
+    from {left: 0px;}
+     to {left: 1495px;}
+    to {left: 1495px;}
+
+}
