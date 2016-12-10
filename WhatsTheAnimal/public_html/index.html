@@ -37,7 +37,7 @@ and open the template in the editor.
             <p id="answer"></p>
             <div style="color: white;"  id="result"></div>
             <div style="color: white;" id="result2"></div>
-            <p><button style="padding: 20px;" onclick="window.localstorage.clear()">Clear Results</button></p>
+            <p><button style="padding: 20px;" onclick="clear()">Clear Results</button></p>
             <p><button style="padding: 20px;"  onclick="nextQuestion()">Next Question</button></p>
         
         <div style="padding: 20px;" id='keepingScore'>
@@ -94,7 +94,7 @@ and open the template in the editor.
                 document.getElementById("answer").innerHTML = 'Correct!';
             }
             function clear() {
-                localStorage.clear();
+                window.localStorage.clear();
             }
             var image_1 = {
                 image: '<img src="images/BaldEagle.jpg" alt="Bald Eagle" style="width:416px;height:292px;">',
